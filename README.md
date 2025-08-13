@@ -79,6 +79,28 @@ To generate analysis results, you must first set up DroidXP and collect benign/m
   (e.g., `benchmark/results/20210220212608/report/`)
 
 ---
+## File structure
+```
+AutoDroid/
+│
+├── src_parse.py                   # Parses src.txt files to CSV (API features)
+├── logs_parser.py                 # Parses security_report.log using Gemini AI (dynamic log features)
+├── training_small.py              # for smaller API-based features
+├── train_big.py                   # for large log-based features
+├── model.py                       # Predicts label for a single src.txt using trained model
+├── automate.py                    # GUI automation: select APK, benchmark, predict
+├── android-malware-analysis-4.ipynb # Jupyter notebook for other training/evaluation models
+├── requirements.txt               # Python package requirements
+│
+├── src_features.csv               # Example output: extracted API features
+├── securitylog_features.xlsx      # Example output: extracted log-based features
+├── benchmark_ml_features.csv      # Unified ML features CSV from src_parse.py
+│
+├── README.md                      # This documentation
+│
+└── (other files/folders as needed, e.g., logs, models, data)
+```
+
 
 # **To Replicate the Project**
 
